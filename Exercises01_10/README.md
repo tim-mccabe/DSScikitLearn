@@ -17,7 +17,7 @@ From this dictionary create a *DataFrame* object and assign to the *df* variable
 
 Then check for the missing values for each column (in percent) and print it to console as shown below. Round the result to two decimal places.
 
-Expected result:
+#### Expected result:
 
 ```
 size      0.17
@@ -31,7 +31,7 @@ dtype: float64
 
 ## Exercise 2
 
-The following df DataFrame is given:
+The following *df DataFrame* is given:
 
 ```
   size  color  gender  price  weight bought
@@ -49,7 +49,7 @@ In response, print the *df DataFrame* to the console.
 
 **Tip:** More about the *SimpleImputer* class: https://scikit-learn.org/stable/modules/generated/sklearn.impute.SimpleImputer.html
 
-Expected result:
+#### Expected result:
 ```
   size  color  gender  price  weight bought
 0   XL    red  female  199.0   500.0    yes
@@ -62,7 +62,7 @@ Expected result:
 
 ## Exercise 3
 
-The following df DataFrame is given:
+The following *df DataFrame* is given:
 
 ```
   size  color  gender  price  weight bought
@@ -78,17 +78,15 @@ Missing data for the column *weight* was replaced with the average value of this
 
 Print the average value that was replaced with the missing values in the *weight* column.
 
-
-
 **Tip:** More about the SimpleImputer class: https://scikit-learn.org/stable/modules/generated/sklearn.impute.SimpleImputer.html
 
-Expected result:
+#### Expected result:
 
 ```
 415.0
 ```
 
-## Exercise 04
+## Exercise 4
 
 The following *df DataFrame* is given:
 
@@ -108,7 +106,7 @@ Assign changes to the *df DataFrame*. In response, print the *df DataFrame* to t
 
 **Tip:** More about the SimpleImputer class: https://scikit-learn.org/stable/modules/generated/sklearn.impute.SimpleImputer.html
 
-Expected result:
+#### Expected result:
 
 ```
   size  color  gender  price  weight bought
@@ -118,4 +116,88 @@ Expected result:
 3  NaN  green  female  129.0     NaN     no
 4    M    red  female   79.0   410.0    yes
 5    M  green    male   89.0     NaN     no
+```
+
+## Exercise 5
+
+The following *df DataFrame* is given:
+
+```
+  size  color  gender  price  weight bought
+0   XL    red  female  199.0   500.0    yes
+1    L  green    male   89.0   450.0     no
+2    M   blue     NaN    NaN   300.0    yes
+3  NaN  green  female  129.0     NaN     no
+4    M    red  female   79.0   410.0    yes
+5    M  green    male   89.0     NaN     no
+```
+
+Using the *scikit-learn* package and the *SimpleImputer* class, fill in the missing values for the *size* column with the most frequent value of this column.
+
+Assign changes to the *df DataFrame*. In response, print the *df DataFrame* to the console as shown below.
+
+**Tip:** More about the *SimpleImputer* class: https://scikit-learn.org/stable/modules/generated/sklearn.impute.SimpleImputer.html
+
+#### Expected result:
+```
+  size  color  gender  price  weight bought
+0   XL    red  female  199.0   500.0    yes
+1    L  green    male   89.0   450.0     no
+2    M   blue     NaN    NaN   300.0    yes
+3    M  green  female  129.0     NaN     no
+4    M    red  female   79.0   410.0    yes
+5    M  green    male   89.0     NaN     no
+```
+
+## Exercise 6
+
+The following *df DataFrame* is given:
+
+```
+  size  color  gender  price  weight bought
+0   XL    red  female  199.0   500.0    yes
+1    L  green    male   89.0   450.0     no
+2    M   blue     NaN    NaN   300.0    yes
+3  NaN  green  female  129.0     NaN     no
+4    M    red  female   79.0   410.0    yes
+5    M  green    male   89.0     NaN     no
+```
+
+Extract all rows of the *df* that don't have the value `np.nan` in column *weight*. Using this rows calculate the average value for all numeric columns and print result to the console.
+
+#### Expected result:
+```
+price     122.333333
+weight    415.000000
+dtype: float64
+```
+
+## Exercise 7
+
+The *df DataFrame* is given below:
+
+```
+  size  color  gender  price  weight bought
+0   XL    red  female  199.0   500.0    yes
+1    L  green    male   89.0   450.0     no
+2    M   blue     NaN    NaN   300.0    yes
+3  NaN  green  female  129.0     NaN     no
+4    M    red  female   79.0   410.0    yes
+5    M  green    male   89.0     NaN     no
+```
+
+Extract columns of *object* type from this *DataFrame*. Then fill in all the missing values for these columns with the value `'empty'`.
+
+Assign the result to the *df_object* variable and print it to the console.
+
+#### Expected result:
+
+```
+    size  color  gender bought
+0     XL    red  female    yes
+1      L  green    male     no
+2      M   blue   empty    yes
+3  empty  green  female     no
+4      M    red  female    yes
+5      M  green    male     no
 ```
